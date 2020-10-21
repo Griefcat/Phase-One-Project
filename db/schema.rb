@@ -12,4 +12,29 @@
 
 ActiveRecord::Schema.define(version: 2020_10_21_135224) do
 
+  create_table "excursion_package_joiners", force: :cascade do |t|
+    t.integer "excursion_id"
+    t.integer "trip_package_id"
+  end
+
+  create_table "excursions", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "trip_packages", force: :cascade do |t|
+    t.string "name"
+    t.integer "budget"
+    t.integer "excursion_id"
+  end
+
+  create_table "trips", force: :cascade do |t|
+    t.integer "visitor_id"
+    t.integer "trip_package_id"
+  end
+
+  create_table "visitors", force: :cascade do |t|
+    t.string "name"
+    t.integer "budget"
+  end
+
 end
