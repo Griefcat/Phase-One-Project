@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_21_135224) do
+ActiveRecord::Schema.define(version: 2020_10_21_181449) do
 
   create_table "excursion_package_joiners", force: :cascade do |t|
     t.integer "excursion_id"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2020_10_21_135224) do
 
   create_table "excursions", force: :cascade do |t|
     t.string "name"
+    t.integer "budget"
+    t.string "description"
   end
 
   create_table "trip_packages", force: :cascade do |t|
