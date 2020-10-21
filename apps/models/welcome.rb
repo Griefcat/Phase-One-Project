@@ -1,7 +1,9 @@
 def welcome
 
     puts "Congratulations you decided to take the best trip on planet earth-- to the breath-taking Amalfi Coast of Italy! Let us plan the trip for you!"
-
+    sleep(2)
+    puts "~~~~~~~~~~~~~~~"
+    sleep(2)
 end
 
 def budget
