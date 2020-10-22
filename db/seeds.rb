@@ -13,7 +13,7 @@ wine_tasting = Excursion.create(name: "Wine Tasting", budget: 4, description: "W
 anne = Visitor.create(name: "Anne", budget: 2)
 kellie = Visitor.create(name: "Kellie", budget: 5)
 
-
+gold_package = TripPackage.create()
 
 
 

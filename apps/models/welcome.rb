@@ -1,15 +1,14 @@
 require 'pastel'
-
+PASTEL = Pastel.new
 
 
 def welcome
-    pastel = Pastel.new
-    puts pastel.green("\n  Buongiorno  ") + (" and ") + pastel.red("  Congratulazioni!  ")
+    puts PASTEL.green("\n  Buongiorno  ") + (" and ") + PASTEL.red("  Congratulazioni!  ")
     puts "\n You've decided to take the best trip on Planet Earth --"
     sleep(2)
     puts "\n to the breathtaking"
     sleep(1)
-    puts pastel.blue(" \n
+    puts PASTEL.blue(" \n
     ▄▀█ █▀▄▀█ ▄▀█ █░░ █▀▀ █    █▀▀ █▀█ ▄▀█ █▀ ▀█▀
     █▀█ █░▀░█ █▀█ █▄▄ █▀░ █    █▄▄ █▄█ █▀█ ▄█ ░█░")
     sleep(5)
@@ -18,9 +17,11 @@ end
 
 def ask_for_budget
  puts "\n One a scale of 1-5 (1 being a cheapskate and 5 being Jeff Bezos), what is your budget?"
- #visitor_budget = gets.chomp
- #return visitor_budget
 end
+
+def try_again
+    we_took_in_a_budget
+  end 
  
 def we_took_in_a_budget
     #list_options
@@ -46,13 +47,16 @@ def we_took_in_a_budget
         else 
         #       # Raises argument if input is wrong
             puts " "
-            puts "Oops! Per favore, try again."
+            puts "Oops!" + PASTEL.green(" Per favore") + ", try again."
             puts " " 
+            try_again
         
         #     end
         #   end
         #   input # User prompted to give input.
         # end
       end 
+      
+      
     
 end 
