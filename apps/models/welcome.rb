@@ -1,18 +1,18 @@
 require 'pastel'
 def welcome
     pastel = Pastel.new
-    puts pastel.blue("Buongiorno!")
-    puts "and" 
-    puts pastel.blue("Congratulazioni!") 
+    puts " "
+    puts pastel.green("  Buongiorno  ") + (" and ") + pastel.red("  Congratulazioni!  ")
+    puts " "
     puts "You've decided to take the best trip on planet earth --"
     sleep(2)
     puts " "
     puts "to the breathtaking"
-    sleep(1)
     puts " "
-    puts "
-    ▄▀█ █▀▄▀█ ▄▀█ █░░ █▀▀ █   █▀▀ █▀█ ▄▀█ █▀ ▀█▀
-    █▀█ █░▀░█ █▀█ █▄▄ █▀░ █   █▄▄ █▄█ █▀█ ▄█ ░█░"
+    sleep(1)
+    puts pastel.blue("
+    ▄▀█ █▀▄▀█ ▄▀█ █░░ █▀▀ █    █▀▀ █▀█ ▄▀█ █▀ ▀█▀
+    █▀█ █░▀░█ █▀█ █▄▄ █▀░ █    █▄▄ █▄█ █▀█ ▄█ ░█░")
     sleep(5)
     puts " "
 end
