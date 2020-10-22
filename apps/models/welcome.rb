@@ -19,6 +19,11 @@ def ask_for_budget
  puts "\n One a scale of 1-5 (1 being a cheapskate and 5 being Jeff Bezos), what is your budget?"
 end
 
+def exit_program
+    puts "Ciao!"
+    exit 
+end 
+
 def try_again
     we_took_in_a_budget
   end 
@@ -26,9 +31,16 @@ def try_again
 def we_took_in_a_budget
     #list_options
     visitor_budget = gets.chomp.to_i
-    if visitor_budget.between?(1,5)
+    if  visitor_budget.between?(1,5)
         puts "cool"
-
+    else
+        puts " "
+            puts "Oops!" + PASTEL.green(" Per favore") + ", try again."
+            puts " " 
+            try_again
+    # else 
+    #     if visitor_budget.to_s = "exit"
+    #         exit_program 
       #if visitor_budget == "i"
         #puts " "
         # Blank space to show below if user makes valid.
@@ -44,12 +56,10 @@ def we_took_in_a_budget
         #     display_coffee(i-1)
         #     # Count starts at 0 for the computer, 1 for the user.
         #     display_again 
-        else 
+
         #       # Raises argument if input is wrong
-            puts " "
-            puts "Oops!" + PASTEL.green(" Per favore") + ", try again."
-            puts " " 
-            try_again
+        
+            
         
         #     end
         #   end
@@ -57,6 +67,5 @@ def we_took_in_a_budget
         # end
       end 
       
-      
+    end 
     
-end 
