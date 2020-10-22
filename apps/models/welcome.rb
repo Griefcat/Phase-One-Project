@@ -1,4 +1,5 @@
 require 'pastel'
+require 'pry'
 PASTEL = Pastel.new
 
 
@@ -19,53 +20,57 @@ def ask_for_budget
  puts "\n One a scale of 1-5 (1 being a cheapskate and 5 being Jeff Bezos), what is your budget?"
 end
 
-def exit_program
-    puts "Ciao!"
-    exit 
-end 
+# def user_input
+#     @input = gets.chomp.to_i
+# end 
 
 def try_again
-    we_took_in_a_budget
-  end 
+    gets_budget
+ end 
  
-def we_took_in_a_budget
-    #list_options
-    visitor_budget = gets.chomp.to_i
-    if  visitor_budget.between?(1,5)
-        puts "cool"
+def gets_budget
+    input = gets.chomp.to_i
+    if  input.between?(1,5)
+        puts "Grazie! Let's put together your trip for Budget Level #{input}"  
     else
         puts " "
             puts "Oops!" + PASTEL.green(" Per favore") + ", try again."
             puts " " 
             try_again
-    # else 
-    #     if visitor_budget.to_s = "exit"
-    #         exit_program 
-      #if visitor_budget == "i"
-        #puts " "
-        # Blank space to show below if user makes valid.
-        #elsif visitor_budget != "exit"
-            #puts "cool"
-        #   i = Integer(input , exception: false)
-        #   # Parsed input to raise exception when not false
-        #   puts " "
-        #elsif visitor_budget.between?(1,5)
-            #puts "great"
-        #     puts i
-        #     # Prints number user entered. 
-        #     display_coffee(i-1)
-        #     # Count starts at 0 for the computer, 1 for the user.
-        #     display_again 
+        end 
+end
 
-        #       # Raises argument if input is wrong
-        
+
+
+
+def exit_program
+    puts " "
+    puts "Grazie! Ci vediamo!"
+    puts " "
+    exit
+
+  end
+
+# def gets_budget
+#     if user_input.between?(1,5)
+#         puts "Grazie! Let's put together your trip for Budget Level #{user_input}."
+#         return user_input
+#     else 
+#         puts "Oops! Try again."
+#         try_again
+#     end 
+# end 
+
+#  def try_again
+#     gets_budget
+#  end 
             
-        
-        #     end
-        #   end
-        #   input # User prompted to give input.
-        # end
-      end 
-      
-    end 
+
+# def your_trip_display(input)
+#     #gets_budget
+#      #puts " "
+#      #puts "Grazie! Let's put together your trip for Budget Level #{input}"
+#      your_trip = TripPackage.find_by(budget: input)
+#      return your_trip
+#  end 
     

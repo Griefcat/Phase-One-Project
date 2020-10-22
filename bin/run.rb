@@ -14,7 +14,16 @@ system("clear")
 welcome
 #Ask for budget
 ask_for_budget
-we_took_in_a_budget
+#User puts in input
+# user_input
+#we do stuff with that input
+gets_budget
+# input = gets_budget()
+# your_trip = your_trip_display(input)
+exit_program
+
+#my_trip = gets_trip_package
+
 #Output trip package based on budget
 #Give option for more info on trip
 #Return to trip package home menu
