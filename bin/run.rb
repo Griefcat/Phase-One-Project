@@ -8,11 +8,13 @@ require_relative "../apps/models/welcome.rb"
 
 require 'pry'
 
-
+#clear the terminal
+system("clear")
 #Welcome vistor
 welcome
 #Ask for budget
-budget
+ask_for_budget
+we_took_in_a_budget
 #Output trip package based on budget
 #Give option for more info on trip
 #Return to trip package home menu
