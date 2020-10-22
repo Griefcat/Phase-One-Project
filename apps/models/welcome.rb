@@ -1,9 +1,20 @@
+require 'pastel'
 def welcome
-
-    puts "Congratulations you decided to take the best trip on planet earth-- to the breath-taking Amalfi Coast of Italy! Let us plan the trip for you!"
+    pastel = Pastel.new
+    puts pastel.blue("Buongiorno!")
+    puts "and" 
+    puts pastel.blue("Congratulazioni!") 
+    puts "You've decided to take the best trip on planet earth --"
     sleep(2)
-    puts "~~~~~~~~~~~~~~~"
-    sleep(2)
+    puts " "
+    puts "to the breathtaking"
+    sleep(1)
+    puts " "
+    puts "
+    ▄▀█ █▀▄▀█ ▄▀█ █░░ █▀▀ █   █▀▀ █▀█ ▄▀█ █▀ ▀█▀
+    █▀█ █░▀░█ █▀█ █▄▄ █▀░ █   █▄▄ █▄█ █▀█ ▄█ ░█░"
+    sleep(5)
+    puts " "
 end
 
 def budget
