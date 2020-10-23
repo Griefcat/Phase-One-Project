@@ -12,8 +12,14 @@ require 'pry'
 
 #Welcome vistor
 welcome
+intro 
+intro_answer
 #Ask for budget
-ask_for_budget
+#intro message: We have a set of Trip Packages containing activities for all budget levels. 
+#Would you like us to generate a package based on your budget? Or would you like to see a list of excursions?[budget/list]
+#person inputs "budget" - proceeds with asking for budget 
+#person inputs "list" - proceeds with presenting a list of excursions 
+#ask_for_budget
 #User puts in input
 
 #do you want to choose trip by budget or activity
@@ -21,10 +27,10 @@ ask_for_budget
 #user puts in activity
 #display our list of activities, asks for user to input the activity want
 #display trip packages with that activity
-werklwjrkwjaerlakwejrklewjr
+#werklwjrkwjaerlakwejrklewjr
 # user_input
 #we do stuff with that input
-gets_budget
+#gets_budget
 #display_again
 #exit_program
 # input = gets_budget()

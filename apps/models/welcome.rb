@@ -18,15 +18,82 @@ def welcome
     
 end
 
+def try_again_for_intro
+    intro_answer
+end 
+
+def intro 
+    puts " "
+    puts " "
+    puts "Here at Va Via KellieAnne we've put together the perfect packages of excursions for you to enjoy on your getaway to Southern Italy's iconic seaside."
+    puts " "
+    puts " "
+    puts "We can generate your trip package based on either your budget or your activity preferences! Please press b to see options based on your budget or l to see our full list of offered excursions! [b/l]"
+end 
+
+def intro_answer
+        intro_answer = gets.strip.downcase
+        if intro_answer == "b"
+            ask_for_budget
+        elsif intro_answer == "l" 
+            list_of_activities
+        else
+            puts " "
+            puts "Oops!" + PASTEL.green(" 𝙋𝙚𝙧 𝙛𝙖𝙫𝙤𝙧𝙚") + ", try again."
+            puts " " 
+            try_again_for_intro
+        end 
+end   
+
+
+def list_of_activities 
+    puts " "
+    sleep(1)
+    excursions = Excursion.all
+    puts PASTEL.green(" 𝙈𝙤𝙡𝙩𝙤 𝙗𝙚𝙣𝙚!")+"Here is a list of our activites:"
+    excursions.each_with_index do |excursion, index|
+    puts "#{index+1}." + "#{excursion.name}"
+    end
+    puts " "
+    puts  "Enter a number 1-7 to learn more about the activity"
+    other_input = gets.chomp.to_i
+    more_info = excursions.pluck(:name, :description)[other_input-1]
+    more_info.map do |element|
+        puts element
+    end
+end
+
+# def display_again 
+#     puts "Would you like to see more budget options? [y/n]"
+#     answer = gets.strip.downcase
+
+#       if answer == "y"
+#         puts "Here you go!"
+#         puts " "
+#         puts " "
+         
+#          ask_for_budget
+#          gets_budget
+
+#       elsif answer == "n" || answer == "exit"
+#         exit_program
+#       else 
+#         puts " "
+#         puts "Uh-oh! Please try again."
+#         puts " "
+#     end  
+# end
+
 def ask_for_budget
  puts "\n One a scale of 1-5 (1 being a cheapskate and 5 being Jeff Bezos), what is your budget?"
+ gets_budget
 end
 
 # def user_input
 #     @input = gets.chomp.to_i
 # end 
 
-def try_again
+def try_again_for_budget
     gets_budget
  end 
  
@@ -52,7 +119,7 @@ def gets_budget
         puts " "
             puts "Oops!" + PASTEL.green(" 𝙋𝙚𝙧 𝙛𝙖𝙫𝙤𝙧𝙚") + ", try again."
             puts " " 
-            try_again
+            try_again_for_budget
         end 
         display_again
 end
