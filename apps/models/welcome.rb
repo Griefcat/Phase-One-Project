@@ -88,8 +88,12 @@ def enter_a_number
     end
     puts " "
     puts "#{name} is part of the following packages:" 
+    selected_activity = Excursion.find_by(name: name).trip_packages.pluck(:name).join(" , ")
+    puts selected_activity
     puts " "
     puts " "
+
+    # binding.pry
     # joiners = ExcursionPackageJoiners.all
     # x = joiners.find_by(excursion: name)  
     sleep(1) 
