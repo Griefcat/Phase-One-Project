@@ -80,6 +80,10 @@ def enter_a_number
     excursions = Excursion.all
     other_input = gets.chomp.to_i
     puts " "
+    puts "Fetching the activity 🌴🌴🌴..."
+    sleep(4)
+    puts " "
+    puts " "
     name = excursions.pluck(:name)[other_input-1]
     more_info = excursions.pluck(:name, :description)[other_input-1]
     more_info.map do |element|
