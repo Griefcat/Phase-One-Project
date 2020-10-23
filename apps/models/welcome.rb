@@ -38,7 +38,7 @@ def gets_budget
         sleep(7)
         puts "Here are your adventures based on your Budget level!"
         sleep(3)
-        pp your_trip.excursions
+        print your_trip.excursions.pluck(:name, :description)
 
         # binding.pry  
     else
