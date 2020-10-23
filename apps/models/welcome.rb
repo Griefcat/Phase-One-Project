@@ -25,10 +25,11 @@ end
 def intro 
     puts " "
     puts " "
-    puts "Here at Va Via KellieAnne we've put together the perfect packages of excursions for you to enjoy on your getaway to Southern Italy's iconic seaside."
+    puts PASTEL.blue("Here at Va Via KellieAnne we've put together the perfect packages of excursions for you to enjoy on your getaway to Southern Italy's iconic seaside.")
     puts " "
     puts " "
     puts "We can generate your trip package based on either your budget or your activity preferences! Please press b to see options based on your budget or l to see our full list of offered excursions! [b/l]"
+    intro_answer
 end 
 
 def intro_answer
@@ -90,27 +91,45 @@ def enter_a_number
     puts " "
     puts " "
     # joiners = ExcursionPackageJoiners.all
-    # x = joiners.find_by(excursion: name)   
-    # display_list_again
+    # x = joiners.find_by(excursion: name)  
+    sleep(1) 
+    display_list_again
     end 
 
     # where excursion: == name 
 
+    def exit_list
+        puts "Would you like to make a new selection based on budget? [y/n]"
+        new_answer = gets.strip.downcase
+    
+          if new_answer == "y"
+            puts " "
+            intro
+    
+          elsif new_answer == "n" 
+            exit_program
+          else 
+            puts " "
+            puts "Uh-oh! Please try again."
+            puts " "
+        end  
+    end
 
 
 
 def display_list_again 
     puts "Would you like to see our list of excursions again? [y/n]"
-    answer = gets.strip.downcase
+    new_answer = gets.strip.downcase
 
-      if answer == "y"
+      if new_answer == "y"
         puts " "
         intro_to_list_of_activities
+        list_of_activities
         intro_enter_a_number
-        enter_a_number
+        enter_a_number 
 
-      elsif answer == "n" || answer == "exit"
-        exit_program
+      elsif new_answer == "n" || new_answer == "exit"
+        exit_list
       else 
         puts " "
         puts "Uh-oh! Please try again."
@@ -158,6 +177,23 @@ def gets_budget
         display_again
 end
 
+def exit_budget_list
+    puts "Would you like to see a full list of our excursions? [y/n]"
+    new_answer = gets.strip.downcase
+
+      if new_answer == "y"
+        puts " "
+        intro
+
+      elsif new_answer == "n" 
+        exit_program
+      else 
+        puts " "
+        puts "Uh-oh! Please try again."
+        puts " "
+    end  
+end
+
 def display_again 
     puts "Would you like to see more budget options? [y/n]"
     answer = gets.strip.downcase
@@ -171,7 +207,7 @@ def display_again
          gets_budget
 
       elsif answer == "n" || answer == "exit"
-        exit_program
+        exit_budget_list
       else 
         puts " "
         puts "Uh-oh! Please try again."
