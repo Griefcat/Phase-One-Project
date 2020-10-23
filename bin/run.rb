@@ -9,7 +9,7 @@ require_relative "../apps/models/welcome.rb"
 require 'pry'
 
 #clear the terminal
-system("clear")
+
 #Welcome vistor
 welcome
 #Ask for budget
@@ -18,9 +18,11 @@ ask_for_budget
 # user_input
 #we do stuff with that input
 gets_budget
+# display_again
+exit_program
 # input = gets_budget()
 # your_trip = your_trip_display(input)
-exit_program
+
 
 #my_trip = gets_trip_package
 

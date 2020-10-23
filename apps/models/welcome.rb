@@ -5,7 +5,8 @@ PASTEL = Pastel.new
 
 
 def welcome
-    puts PASTEL.green("\n  Buongiorno  ") + (" and ") + PASTEL.red("  Congratulazioni!  ")
+    system("clear")
+    puts PASTEL.green("\n  𝘽𝙤𝙣𝙜𝙞𝙤𝙧𝙣𝙤  ") + (" and ") + PASTEL.red("  𝘾𝙤𝙣𝙜𝙧𝙖𝙩𝙪𝙡𝙖𝙯𝙞𝙤𝙣𝙞!  ")
     puts "\n You've decided to take the best trip on Planet Earth --"
     sleep(2)
     puts "\n to the breathtaking"
@@ -34,7 +35,10 @@ def gets_budget
     if  input.between?(1,5)
         puts "Grazie! Let's put together your trip for Budget Level #{input}"
         your_trip = TripPackage.find_by(budget: input)
-        puts your_trip.excursions
+        sleep(7)
+        puts "Here are your adventures based on your Budget level!"
+        sleep(3)
+        pp your_trip.excursions
 
         # binding.pry  
     else
@@ -45,7 +49,26 @@ def gets_budget
         end 
 end
 
+# def display_again 
+#     puts "Would you like to see the menu again? [y/n]"
+#     answer = gets.strip.downcase
 
+#       if answer == "y"
+#         puts "Here you go!"
+#         puts " "
+#         puts " "
+#         welcome
+#         ask_for_budget
+#         gets_budget
+
+#       elsif answer == "n" || answer == "exit"
+#         exit_program
+#       else 
+#         puts " "
+#         puts "Uh-oh! Please try again."
+#         puts " "
+#     end  
+# end
 
 
 def exit_program
