@@ -38,7 +38,13 @@ def gets_budget
         sleep(7)
         puts "Here are your adventures based on your Budget level!"
         sleep(3)
-        print your_trip.excursions.pluck(:name, :description)
+        puts " "
+        x = your_trip.excursions.pluck(:name, :description)
+        x.map do |trips| 
+            puts trips
+            puts " "
+        
+        end
 
         # binding.pry  
     else
@@ -47,28 +53,29 @@ def gets_budget
             puts " " 
             try_again
         end 
+        display_again
 end
 
-# def display_again 
-#     puts "Would you like to see the menu again? [y/n]"
-#     answer = gets.strip.downcase
+def display_again 
+    puts "Would you like to see the menu again? [y/n]"
+    answer = gets.strip.downcase
 
-#       if answer == "y"
-#         puts "Here you go!"
-#         puts " "
-#         puts " "
-#         welcome
-#         ask_for_budget
-#         gets_budget
+      if answer == "y"
+        puts "Here you go!"
+        puts " "
+        puts " "
+         
+         ask_for_budget
+         gets_budget
 
-#       elsif answer == "n" || answer == "exit"
-#         exit_program
-#       else 
-#         puts " "
-#         puts "Uh-oh! Please try again."
-#         puts " "
-#     end  
-# end
+      elsif answer == "n" || answer == "exit"
+        exit_program
+      else 
+        puts " "
+        puts "Uh-oh! Please try again."
+        puts " "
+    end  
+end
 
 
 def exit_program
