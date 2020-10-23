@@ -15,6 +15,13 @@ welcome
 #Ask for budget
 ask_for_budget
 #User puts in input
+
+#do you want to choose trip by budget or activity
+
+#user puts in activity
+#display our list of activities, asks for user to input the activity want
+#display trip packages with that activity
+
 # user_input
 #we do stuff with that input
 gets_budget

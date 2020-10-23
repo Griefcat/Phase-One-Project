@@ -34,6 +34,7 @@ def gets_budget
     input = gets.chomp.to_i
     if  input.between?(1,5)
         puts "Grazie! Let's put together your trip for Budget Level #{input}"
+        puts " "
         your_trip = TripPackage.find_by(budget: input)
         sleep(7)
         puts "Here are your adventures based on your Budget level!"
@@ -49,7 +50,7 @@ def gets_budget
         # binding.pry  
     else
         puts " "
-            puts "Oops!" + PASTEL.green(" Per favore") + ", try again."
+            puts "Oops!" + PASTEL.green(" 𝙋𝙚𝙧 𝙛𝙖𝙫𝙤𝙧𝙚") + ", try again."
             puts " " 
             try_again
         end 
@@ -57,7 +58,7 @@ def gets_budget
 end
 
 def display_again 
-    puts "Would you like to see the menu again? [y/n]"
+    puts "Would you like to see more budget options? [y/n]"
     answer = gets.strip.downcase
 
       if answer == "y"
@@ -80,7 +81,7 @@ end
 
 def exit_program
     puts " "
-    puts "Grazie! Ci vediamo!"
+    puts PASTEL.green("\n  𝘾 𝙞 𝙖 𝙤!  ") + (" and ") + PASTEL.red("  𝘾 𝙞   𝙫 𝙚 𝙙 𝙞 𝙖 𝙢 𝙤 !!  ")
     puts " "
     exit
 
