@@ -36,6 +36,7 @@ def intro_answer
         if intro_answer == "b"
             ask_for_budget
         elsif intro_answer == "l" 
+            intro_to_list_of_activities
             list_of_activities
         else
             puts " "
@@ -45,44 +46,77 @@ def intro_answer
         end 
 end   
 
-
-def list_of_activities 
+def intro_to_list_of_activities
+    puts " "
     puts " "
     sleep(1)
+    puts PASTEL.green(" 𝙈𝙤𝙡𝙩𝙤 𝙗𝙚𝙣𝙚!")+" Here is a list of our activites:"
+    puts " "
+    puts " "
+end 
+
+def intro_enter_a_number
+    puts " "
+    puts " "
+    puts  "Enter a number 1-7 to learn more about the activity"
+    puts " "
+end 
+
+def list_of_activities 
     excursions = Excursion.all
-    puts PASTEL.green(" 𝙈𝙤𝙡𝙩𝙤 𝙗𝙚𝙣𝙚!")+"Here is a list of our activites:"
+    #joiners = ExcursionPackageJoiner.all
+    puts " "
+    sleep(1)
     excursions.each_with_index do |excursion, index|
     puts "#{index+1}." + "#{excursion.name}"
     end
-    puts " "
-    puts  "Enter a number 1-7 to learn more about the activity"
+    intro_enter_a_number
+    enter_a_number
+end 
+
+
+
+def enter_a_number
+    excursions = Excursion.all
     other_input = gets.chomp.to_i
+    puts " "
+    name = excursions.pluck(:name)[other_input-1]
     more_info = excursions.pluck(:name, :description)[other_input-1]
     more_info.map do |element|
         puts element
     end
+    puts " "
+    puts "#{name} is part of the following packages:" 
+    puts " "
+    puts " "
+    # joiners = ExcursionPackageJoiners.all
+    # x = joiners.find_by(excursion: name)   
+    # display_list_again
+    end 
+
+    # where excursion: == name 
+
+
+
+
+def display_list_again 
+    puts "Would you like to see our list of excursions again? [y/n]"
+    answer = gets.strip.downcase
+
+      if answer == "y"
+        puts " "
+        intro_to_list_of_activities
+        intro_enter_a_number
+        enter_a_number
+
+      elsif answer == "n" || answer == "exit"
+        exit_program
+      else 
+        puts " "
+        puts "Uh-oh! Please try again."
+        puts " "
+    end  
 end
-
-# def display_again 
-#     puts "Would you like to see more budget options? [y/n]"
-#     answer = gets.strip.downcase
-
-#       if answer == "y"
-#         puts "Here you go!"
-#         puts " "
-#         puts " "
-         
-#          ask_for_budget
-#          gets_budget
-
-#       elsif answer == "n" || answer == "exit"
-#         exit_program
-#       else 
-#         puts " "
-#         puts "Uh-oh! Please try again."
-#         puts " "
-#     end  
-# end
 
 def ask_for_budget
  puts "\n One a scale of 1-5 (1 being a cheapskate and 5 being Jeff Bezos), what is your budget?"
@@ -176,4 +210,4 @@ end
 #      your_trip = TripPackage.find_by(budget: input)
 #      return your_trip
 #  end 
-    
+
