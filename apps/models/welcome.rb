@@ -92,7 +92,7 @@ def enter_a_number
     puts " "
     puts "#{name} is part of the following packages:" 
     selected_activity = Excursion.find_by(name: name).trip_packages.pluck(:name).join(" , ")
-    puts selected_activity
+    puts PASTEL.blue(selected_activity)
     puts " "
     puts " "
     sleep(1) 
