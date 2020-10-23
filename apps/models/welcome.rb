@@ -65,7 +65,6 @@ end
 
 def list_of_activities 
     excursions = Excursion.all
-    #joiners = ExcursionPackageJoiner.all
     puts " "
     sleep(1)
     excursions.each_with_index do |excursion, index|
@@ -92,10 +91,6 @@ def enter_a_number
     puts selected_activity
     puts " "
     puts " "
-
-    # binding.pry
-    # joiners = ExcursionPackageJoiners.all
-    # x = joiners.find_by(excursion: name)  
     sleep(1) 
     display_list_again
     end 
@@ -158,7 +153,7 @@ def gets_budget
     input = gets.chomp.to_i
     if  input.between?(1,5)
         puts "Grazie! Let's put together your trip for Budget Level #{input}"
-        puts " "
+        puts "🌴 🌴 🌴 🌴 ..." 
         your_trip = TripPackage.find_by(budget: input)
         sleep(7)
         puts "Here are your adventures based on your Budget level!"
@@ -171,7 +166,7 @@ def gets_budget
         
         end
 
-        # binding.pry  
+        
     else
         puts " "
             puts "Oops!" + PASTEL.green(" 𝙋𝙚𝙧 𝙛𝙖𝙫𝙤𝙧𝙚") + ", try again."
@@ -227,27 +222,4 @@ def exit_program
     exit
 
 end
-
-# def gets_budget
-#     if user_input.between?(1,5)
-#         puts "Grazie! Let's put together your trip for Budget Level #{user_input}."
-#         return user_input
-#     else 
-#         puts "Oops! Try again."
-#         try_again
-#     end 
-# end 
-
-#  def try_again
-#     gets_budget
-#  end 
-            
-
-# def your_trip_display(input)
-#     #gets_budget
-#      #puts " "
-#      #puts "Grazie! Let's put together your trip for Budget Level #{input}"
-#      your_trip = TripPackage.find_by(budget: input)
-#      return your_trip
-#  end 
 
