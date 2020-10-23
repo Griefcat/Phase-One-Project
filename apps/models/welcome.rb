@@ -3,6 +3,7 @@ require 'pry'
 PASTEL = Pastel.new
 
 
+
 def welcome
     puts PASTEL.green("\n  Buongiorno  ") + (" and ") + PASTEL.red("  Congratulazioni!  ")
     puts "\n You've decided to take the best trip on Planet Earth --"
@@ -31,7 +32,11 @@ def try_again
 def gets_budget
     input = gets.chomp.to_i
     if  input.between?(1,5)
-        puts "Grazie! Let's put together your trip for Budget Level #{input}"  
+        puts "Grazie! Let's put together your trip for Budget Level #{input}"
+        your_trip = TripPackage.find_by(budget: input)
+        puts your_trip.excursions
+
+        # binding.pry  
     else
         puts " "
             puts "Oops!" + PASTEL.green(" Per favore") + ", try again."
@@ -49,7 +54,7 @@ def exit_program
     puts " "
     exit
 
-  end
+end
 
 # def gets_budget
 #     if user_input.between?(1,5)
