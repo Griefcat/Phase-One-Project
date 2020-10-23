@@ -21,7 +21,7 @@ ask_for_budget
 #user puts in activity
 #display our list of activities, asks for user to input the activity want
 #display trip packages with that activity
-
+werklwjrkwjaerlakwejrklewjr
 # user_input
 #we do stuff with that input
 gets_budget
